@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  div{
+    background-image: linear-gradient( 135deg, #FFF720 10%, #3CD500 100%);
+    width: 900px;
+    margin: 10px;
+    padding: 10px;
+    margin-left: 170px;
+    text-align: center;      
+  }
+  button{
+    margin-right: 700px;
+    width: 100px;
+    display: inline-block;
+    padding: 5px;
+    border-bottom-right-radius: 40%;    
+    background-color: transparent;
+    
+  }
+  h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  p#pShow{
+    display: none;
+  }
+  p#psDown{
+    display: none;
+  }
+  p#pFI{
+    display: none;
+  }
+  .azul{
+    color: red;
+  }
+  
+</style>
+<body>
+  <div>
+    <h2> HIDE</h2>
+    <p id="pHide">Escuende el elemento</p>
+    <button id="botonHide">hide</button>
+  </div>
+
+  <div>
+    <h2> SHOW</h2>
+    <p id="pShow">Muestra el elemento</p>
+    <button id="botonShow">show</button>
+  </div>
+
+  <div>
+    <h2> TOGGLE</h2>
+    <p id="pToggle">Alterna entre esconder y mostrar elementos</p>
+    <button id="botonToggle">toggle</button>
+  </div>
+
+  <div>
+    <h2> SLIDE-DOWN</h2>
+    <p id="psDown">Desplega un elemento de forma animada</p>
+    <button id="botonsDown">slideDown</button>
+  </div>
+
+  <div>
+    <h2> SLIDE-UP</h2>
+    <p id="pSU">Escuende un elemento de forma animada</p>
+    <button id="botonSU">slideUp</button>
+  </div>
+
+  <div>
+    <h2> SLIDE-TOGGLE</h2>
+    <p id="pST">Escuende o muestra un elemento de forma animada</p>
+    <button id="botonST">slideToggle</button>
+  </div>
+
+  <div>
+    <h2> FADE-IN</h2>
+    <p id="pFI">Aparece un elemento de forma animada</p>
+    <button id="botonFI">fadeIn</button>
+  </div>
+
+  <div>
+    <h2> FADE-OUT</h2>
+    <p id="pFO">Desvanece un elemento de forma animada</p>
+    <button id="botonFO">fadeOut</button>
+  </div>
+
+  <div>
+    <h2> ADD CLASS</h2>
+    <p id="pAC">Agrega una clase al elemento</p>
+    <button id="botonAC">addClas</button>
+  </div>
+
+  <div>
+    <h2> BEFORE</h2>
+    <p id="pB">Agrega un elemento antes del contenido de un elemento</p>
+    <button id="botonB">before</button>
+  </div>
+
+  <div>
+    <h2> AFTER</h2>
+    <p id="pA">Agrega un elemento al final del contenido de un elemento </p>
+    <button id="botonA">after</button>
+  </div>
+
+  <div id="append">
+    <h2> APPEND</h2>
+    <p id="pApp">Agrega un elemento despues de otro</p>
+    <button id="botonApp">append</button>
+  </div>
+
+  <div>
+    <h2> HTML</h2>
+    <p id="pHTML">Permite acceder a los elementos HTML</p>
+    <button id="botonHTML">html</button>
+  </div>
+
+  <div>
+    <h2> ATTR</h2>
+    <p id="pATTR">PARRAFO ATTR</p>
+    <button id="botonATTR">attr</button>
+  </div>
+
+  <div>
+    <h2> VAL</h2> <!--TRAE TEXTO DE UN ELEMENTO DE TIPO FORMULARIO O LO MODIFICA-->
+    <p><input id="pVAL" type="text"</p>
+    <button id="botonVAL">val</button>
+  </div>
+
+  <div>
+    <h2> TEXT</h2>
+    <p id="pTEXT">PARRAFO TEXT</p>
+    <button id="botonTEXT">text</button>
+  </div>
+
+  <div></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      // 1. Hide
+      $('#botonHide').on('click' , function(){
+        $('#pHide').hide();
+      });
+
+      $('#botonShow').on('click' , function(){
+        $('#pShow').show();
+      });
+
+      $('#botonToggle').on('click' , function(){
+        $('#pToggle').toggle();
+      });
+
+      $('#botonsDown').on('click' , function(){
+        $('#psDown').slideDown();
+      });
+
+      $('#botonSU').on('click' , function(){
+        $('#pSU').slideUp();
+      });
+
+      $('#botonST').on('click' , function(){
+        $('#pST').slideToggle();
+      });
+
+      $('#botonFI').on('click' , function(){
+        $('#pFI').fadeIn();
+      });
+
+      $('#botonFO').on('click' , function(){
+        $('#pFO').fadeOut();
+      });
+
+      $('#botonAC').on('click' , function(){
+        $('#pAC').addClass("azul");
+      });
+
+      $('#botonB').on('click' , function(){
+        $('#pB').before("Agrega un texto antes del parrafo principal");
+      });
+
+      $('#botonA').on('click' , function(){
+        $('#pA').after("Agrega un texto despues del parrafo principal");
+      });
+
+      $('#botonApp').on('click' , function(){
+        $('#pApp').append("insertar elemento");
+      });
+
+      $('#botonHTML').on('click' , function(){
+        $('#pHTML').html("<h1>Esto ya no es una etiqueta p</h1>");
+      });
+
+      $('#botonATTR').on('click' , function(){
+        $('#pATTR').attr("<p> hola </p>");
+      }); 
+      
+      $('#botonVAL').on('click' , function(){
+        $('#pVAL').val("AZUL");  // arreglar porque no funciona
+      });      
+
+      $('#botonTEXT').on('click' , function(){
+        $('#pTEXT').text("Cambio de texto");
+      }); 
+      
+    })    
+  </script>
+</body>
+</html>
